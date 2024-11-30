@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('notebooks', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
+            $table->string('full_name');
             $table->string('company');
+            $table->string('phone_number');
+            $table->string('email');
+            $table->string('date_of_birth');
+            $table->string('photo');
             $table->timestamps();
         });
     }
