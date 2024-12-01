@@ -32,9 +32,9 @@ class NotebookController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $data = $request->validated();
-        $notebook = Notebook::create($data);
-        return NotebookResource::make($notebook);
+            $data = $request->validated();
+            $notebook = Notebook::create($data);
+            return NotebookResource::make($notebook);
     }
 
     /**

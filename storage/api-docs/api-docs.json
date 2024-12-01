@@ -1,0 +1,387 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Notebook API",
+        "version": "v1"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/notebooks": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Список записей",
+                "operationId": "caa3a22afa14ccf17a87b79bcd5da98c",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "full_name": {
+                                                        "type": "string",
+                                                        "example": "Вуколов Данил Александрович"
+                                                    },
+                                                    "company": {
+                                                        "type": "string",
+                                                        "example": "Фьюче",
+                                                        "nullable": "true"
+                                                    },
+                                                    "phone_number": {
+                                                        "type": "string",
+                                                        "example": "+8 800 555 35 35"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "example": "danvuk@gmail.com"
+                                                    },
+                                                    "date_of_birth": {
+                                                        "type": "string",
+                                                        "example": "29.08.2003",
+                                                        "nullable": "true"
+                                                    },
+                                                    "photo": {
+                                                        "type": "string",
+                                                        "example": "https://placehold.co/600x400",
+                                                        "nullable": "true"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Создание записи",
+                "operationId": "0f95ef3fffbcf10dc0b0baba89bea5b0",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "full_name": {
+                                                "type": "string",
+                                                "example": "Вуколов Данил Александрович"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Фьюче",
+                                                "nullable": "true"
+                                            },
+                                            "phone_number": {
+                                                "type": "string",
+                                                "example": "+8 800 555 35 35"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "danvuk@gmail.com"
+                                            },
+                                            "date_of_birth": {
+                                                "type": "string",
+                                                "example": "29.08.2003",
+                                                "nullable": "true"
+                                            },
+                                            "photo": {
+                                                "type": "string",
+                                                "example": "https://placehold.co/600x400",
+                                                "nullable": "true"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "1"
+                                                },
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Вуколов Данил Александрович"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Фьюче",
+                                                    "nullable": "true"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "+8 800 555 35 35"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "danvuk@gmail.com"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "example": "29.08.2003",
+                                                    "nullable": "true"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "https://placehold.co/600x400",
+                                                    "nullable": "true"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/notebooks/{notebook}": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Единичная запись",
+                "operationId": "4d3b4aac11aeaf155fff2489fb6d22b7",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "1"
+                                                },
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Вуколов Данил Александрович"
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Фьюче",
+                                                    "nullable": "true"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "+8 800 555 35 35"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "danvuk@gmail.com"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "example": "29.08.2003",
+                                                    "nullable": "true"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "https://placehold.co/600x400",
+                                                    "nullable": "true"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Удаление записи",
+                "operationId": "b4fcb16f5e3865d3bac8d85a78a16e99",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Запись успешно удалена"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Обновление записи",
+                "operationId": "87bb08aade9ba90a7ec43e87802a5c57",
+                "parameters": [
+                    {
+                        "name": "notebook",
+                        "in": "path",
+                        "description": "ID записи",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "full_name": {
+                                                "type": "string",
+                                                "example": "Вуколов Данил Александрович измен."
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "Фьюче измен.",
+                                                "nullable": "true"
+                                            },
+                                            "phone_number": {
+                                                "type": "string",
+                                                "example": "+8 500 111 6767"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "danda@mail.com"
+                                            },
+                                            "date_of_birth": {
+                                                "type": "string",
+                                                "example": "12.06.2009",
+                                                "nullable": "true"
+                                            },
+                                            "photo": {
+                                                "type": "string",
+                                                "example": "https://placehold.co/300x300",
+                                                "nullable": "true"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": "1"
+                                                },
+                                                "full_name": {
+                                                    "type": "string",
+                                                    "example": "Вуколов Данил Александрович измен."
+                                                },
+                                                "company": {
+                                                    "type": "string",
+                                                    "example": "Фьюче измен.",
+                                                    "nullable": "true"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "+8 500 111 6767"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "danda@mail.com"
+                                                },
+                                                "date_of_birth": {
+                                                    "type": "string",
+                                                    "example": "12.06.2009",
+                                                    "nullable": "true"
+                                                },
+                                                "photo": {
+                                                    "type": "string",
+                                                    "example": "https://placehold.co/300x300",
+                                                    "nullable": "true"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Notebook",
+            "description": "Notebook"
+        }
+    ]
+}
