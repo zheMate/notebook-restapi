@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
  *     path = "/api/notebooks",
  *     summary = "Создание записи",
  *     tags = {"Notebook"},
- *
+ *     security = {{ "bearerAuth": {} }},
  *     @OA\RequestBody(
  *          @OA\JsonContent(
  *              allOf = {
@@ -45,7 +45,7 @@ use App\Http\Controllers\Controller;
  *     path = "/api/notebooks",
  *     summary = "Список записей",
  *     tags = {"Notebook"},
- *
+ *     security = {{ "bearerAuth": {} }},
  *     @OA\Response(
  *         response = 200,
  *         description = "Ok",
@@ -67,6 +67,7 @@ use App\Http\Controllers\Controller;
  *     path = "/api/notebooks/{notebook}",
  *     summary = "Единичная запись",
  *     tags = {"Notebook"},
+ *     security = {{ "bearerAuth": {} }},
  *     @OA\Parameter(
  *         description="ID записи",
  *         in="path",
@@ -96,6 +97,7 @@ use App\Http\Controllers\Controller;
  *     path = "/api/notebooks/{notebook}",
  *     summary = "Обновление записи",
  *     tags = {"Notebook"},
+ *     security = {{ "bearerAuth": {} }},
  *     @OA\Parameter(
  *         description="ID записи",
  *         in="path",
@@ -140,6 +142,7 @@ use App\Http\Controllers\Controller;
  *     path = "/api/notebooks/{notebook}",
  *     summary = "Удаление записи",
  *     tags = {"Notebook"},
+ *     security = {{ "bearerAuth": {} }},
  *     @OA\Parameter(
  *         description="ID записи",
  *         in="path",
